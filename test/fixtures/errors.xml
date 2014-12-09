@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jslint>
+	<file name="dummy.js">
+		<issue line="1" char="13" reason="Strings must use singlequote." evidence="&quot;use strict&quot;" severity="W" />
+		<issue line="1" char="1" reason="Missing semicolon." evidence="&quot;use strict&quot;" severity="W" />
+		<issue line="3" char="9" reason="Missing name in function declaration." evidence="function(a) {" severity="W" />
+		<issue line="9" char="1" reason="&apos;c&apos; is not defined." evidence="c=1;" severity="W" />
+		<issue line="3" char="1" reason="&apos;undefined&apos; is defined but never used." evidence="function(a) {" severity="W" />
+		<issue line="7" char="5" reason="&apos;a&apos; is defined but never used." evidence="var a, b;" severity="W" />
+		<issue line="7" char="8" reason="&apos;b&apos; is defined but never used." evidence="var a, b;" severity="W" />
+		<issue line="3" char="10" reason="&apos;a&apos; is defined but never used." evidence="function(a) {" severity="W" />
+	</file>
+</jslint>
