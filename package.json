@@ -1,0 +1,27 @@
+{
+  "name": "gulp-jshint-xml-file-reporter",
+  "version": "0.1.0",
+  "description": "A reporter to be used by gulp-jshint that will provide a jslint.xml that can be used by CI tools as jenkins",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lourenzo/gulp-jshint-xml-file-reporter.git"
+  },
+  "keywords": [
+    "gulp",
+    "jshint",
+    "jslint_xml",
+    "xml",
+    "ci",
+    "jenkins"
+  ],
+  "author": "Lourenzo Ferreira <lourenzo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lourenzo/gulp-jshint-xml-file-reporter/issues"
+  },
+  "homepage": "https://github.com/lourenzo/gulp-jshint-xml-file-reporter"
+}
