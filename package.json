@@ -4,7 +4,7 @@
   "description": "A reporter to be used by gulp-jshint that will provide a jslint.xml that can be used by CI tools as jenkins",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "node_modules/.bin/mocha test"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/lourenzo/gulp-jshint-xml-file-reporter/issues"
   },
-  "homepage": "https://github.com/lourenzo/gulp-jshint-xml-file-reporter"
+  "homepage": "https://github.com/lourenzo/gulp-jshint-xml-file-reporter",
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "should": "^4.3.1"
+  }
 }
