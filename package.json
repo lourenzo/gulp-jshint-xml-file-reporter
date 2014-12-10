@@ -24,7 +24,12 @@
     "url": "https://github.com/lourenzo/gulp-jshint-xml-file-reporter/issues"
   },
   "homepage": "https://github.com/lourenzo/gulp-jshint-xml-file-reporter",
+  "peerDependencies": {
+    "gulp": "*",
+    "gulp-jshint": "*"
+  },
   "devDependencies": {
+    "gulp-jshint": "^1.9.0",
     "mocha": "^2.0.1",
     "should": "^4.3.1"
   }
