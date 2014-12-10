@@ -21,7 +21,7 @@ var gulp=require('gulp'),
 gulp.task('lint', function () {
     return gulp.src('./**/.js')
         .pipe(jshint())
-        .pipe(jshint.reporter('gulp-jshint-file-reporter', {
+        .pipe(jshint.reporter('gulp-jshint-xml-file-reporter', {
             filePath: './jshint.xml'
         }));
 });
