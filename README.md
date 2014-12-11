@@ -30,16 +30,17 @@ Usage
 -----
 
 ```javascript
-var gulp=require('gulp'),
-    jshint=require('gulp-jshint');
+var gulp = require('gulp'),
+    jshint = require('gulp-jshint-xml-file-reporter'),
+    jshintXMLFile =  require('gulp');
 
 gulp.task('lint', function () {
     return gulp.src('./**/.js')
         .pipe(jshint())
-        .pipe(jshint.reporter('gulp-jshint-xml-file-reporter', {
+        .pipe(jshint.reporter(jshintXMLFile, {
             format: 'checkstyle'
             filePath: './jshint.xml'
-        }));
+        })).on('end', jshintXMLFile.writeFile);
 });
 ```
 
@@ -49,7 +50,7 @@ Options
 
 ```javascript
 {
-    format: String // (checkstyle | js_xml) defaults to checkstyle
+    format: String // (checkstyle | jshint_xml) defaults to checkstyle
     filePath: String // Path to write a file - defaults to jshint.xml    
 }
 
@@ -58,7 +59,7 @@ Options
 
 
 
-Inspired by:
+Inspired on:
 ------------
 
 * [Gulp JSHint File Reporter](https://github.com/spenceralger/gulp-jshint-file-reporter)
