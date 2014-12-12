@@ -37,10 +37,11 @@ var gulp = require('gulp'),
 gulp.task('lint', function () {
     return gulp.src('./**/.js')
         .pipe(jshint())
-        .pipe(jshint.reporter(jshintXMLFile, {
+        .pipe(jshint.reporter(jshintXMLFile))
+        .on('end', jshintXMLFile.writeFile({
             format: 'checkstyle'
             filePath: './jshint.xml'
-        })).on('end', jshintXMLFile.writeFile);
+        }));
 });
 ```
 
