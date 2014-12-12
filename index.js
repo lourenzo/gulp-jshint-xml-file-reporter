@@ -19,22 +19,31 @@ function loadFormatter(formatterPath) {
 
 /**
  * Write out a XML file for the encountered results
+ * @param  {Array}  results
+ * @param  {Array}  data
+ * @param  {Object} opts
  */
-exports.reporter = function (results, data, opts) {
-    console.log(arguments);
-    console.log('\n\n\n\n');
-    opts = opts || {};
-    opts.format = opts.format || 'checkstyle';
-    opts.filePath = opts.filePath || 'jshint.xml';
-    exports.opts = opts;
-    exports.xmlEmitter = loadFormatter(opts.format);
-    exports.out.push(exports.xmlEmitter.formatContent(results));
+exports.reporter = function (results) {
+    exports.out.push(results);
 };
 
-exports.writeFile = function () {
-    var outStream = fs.createWriteStream(exports.opts.filePath);
-    outStream.write(exports.xmlEmitter.getHeader());
-    outStream.write(exports.out.join('\n'));
-    outStream.write(exports.xmlEmitter.getFooter());
-    reset();
+exports.writeFile = function (opts) {
+    opts = opts || {};
+    opts.filePath = opts.filePath || 'jshint.xml';
+    opts.format = opts.format || 'checkstyle';
+    exports.xmlEmitter = loadFormatter(opts.format);
+    return function () {
+        if (!exports.out.length) {
+            reset();
+            return;
+        }
+        var outStream = fs.createWriteStream(opts.filePath);
+        outStream.write(exports.xmlEmitter.getHeader());
+        exports.out.forEach(function (item) {
+            outStream.write(exports.xmlEmitter.formatContent(item));
+        });
+        outStream.write(exports.out.join('\n'));
+        outStream.write(exports.xmlEmitter.getFooter());
+        reset();
+    };
 };
