@@ -42,7 +42,6 @@ exports.writeFile = function (opts) {
         exports.out.forEach(function (item) {
             outStream.write(exports.xmlEmitter.formatContent(item));
         });
-        outStream.write(exports.out.join('\n'));
         outStream.write(exports.xmlEmitter.getFooter());
         reset();
     };
