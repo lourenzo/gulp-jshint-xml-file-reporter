@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="jshint" failures="8">
+	<testcase name="dummy.js">
+		<failure message="8 JSHint Failures">
+			1. line 1, char 13: Strings must use singlequote.
+			2. line 1, char 1: Missing semicolon.
+			3. line 3, char 9: Missing name in function declaration.
+			4. line 9, char 1: &apos;c&apos; is not defined.
+			5. line 3, char 1: &apos;undefined&apos; is defined but never used.
+			6. line 7, char 5: &apos;a&apos; is defined but never used.
+			7. line 7, char 8: &apos;b&apos; is defined but never used.
+			8. line 3, char 10: &apos;a&apos; is defined but never used.
+		</failure>
+	</testcase>
+</testsuite>
