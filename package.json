@@ -4,7 +4,7 @@
   "description": "A JSHint reporter to be used with gulp-jshint that will provide XML (i.e. checkstyle), that can be used by CI tools such as jenkins",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha test"
+    "test": "node_modules/.bin/mocha test/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -29,8 +29,8 @@
     "gulp-jshint": "*"
   },
   "devDependencies": {
-    "gulp-jshint": "^1.9.0",
-    "mocha": "^2.0.1",
-    "should": "^4.3.1"
+    "gulp-jshint": "1.9.0",
+    "mocha": "2.1.0",
+    "should": "4.6.3"
   }
 }
