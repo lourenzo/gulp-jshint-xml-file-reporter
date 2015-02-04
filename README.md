@@ -58,7 +58,7 @@ Options
 
 Release History
 ---------------
-- 2015-02-04    `0.3.2` Added line break after first <jslint> tag
+- 2015-02-04    `0.3.2` Added line break after first jslint tag on jslint emitter
 
 
 Inspired by:
