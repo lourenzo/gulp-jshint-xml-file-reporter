@@ -24,7 +24,7 @@ describe('jslint_xml', function () {
         xmlText = xmlText.concat(xmlEmitter.getFooter());
     });
 
-    it('should transform JSHint results in checkstyle XML', function () {
+    it('should transform JSHint results in jslint XML', function () {
         xmlText.should.equal(mockXMLResults);
     });
 });
