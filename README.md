@@ -1,6 +1,6 @@
 Gulp JSHint XML File Reporter
 =============================
-[![Build Status](https://travis-ci.org/lourenzo/gulp-jshint-xml-file-reporter.svg)](https://travis-ci.org/lourenzo/gulp-jshint-xml-file-reporter)
+[![Build Status](https://travis-ci.org/shnist/gulp-jshint-xml-file-reporter.svg)](https://travis-ci.org/shnist/gulp-jshint-xml-file-reporter)
 
 Information
 -----------
