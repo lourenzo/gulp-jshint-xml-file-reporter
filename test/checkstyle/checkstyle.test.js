@@ -4,7 +4,7 @@ var should = require('should'),
     fs = require('fs'),
     xmlEmitter = require('../../lib/checkstyle_emitter');
 
-describe.only('checkstyle', function () {
+describe('checkstyle', function () {
     var mockXMLResults;
     var xmlText;
 

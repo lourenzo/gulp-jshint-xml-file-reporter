@@ -2,17 +2,29 @@
 
 var should = require('should'),
     fs = require('fs'),
-    xmlEmitter = require('../../lib/jslint_xml_emitter.js');
+    xmlEmitter = require('../../lib/jslint_xml_emitter');
 
-describe('jslint_xml', function () {
-    it('should transform JSHint results in jslint-compatible XML', function (done) {
-        var errors = require('../fixtures/errors'),
-            xmlText = xmlEmitter(errors);
+describe.only('jslint_xml', function () {
+    var mockXMLResults;
+    var xmlText;
 
-        fs.readFile('../fixtures/errors.xml', function (err, data) {
+    before(function (done) {
+        fs.readFile('./test/jslint_xml/fixtures/mock.xml', function (err, data) {
             if (err) return done(err);
-            xmlText.should.equal(data.toString());
+            mockXMLResults = data.toString('utf8');
             done();
         });
+    });
+
+    beforeEach(function () {
+        var errors = require('../fixtures/errors');
+
+        xmlText = xmlEmitter.getHeader();
+        xmlText = xmlText.concat(xmlEmitter.formatContent(errors));
+        xmlText = xmlText.concat(xmlEmitter.getFooter());
+    });
+
+    it('should transform JSHint results in checkstyle XML', function () {
+        xmlText.should.equal(mockXMLResults);
     });
 });
