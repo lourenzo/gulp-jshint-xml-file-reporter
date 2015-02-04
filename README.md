@@ -46,7 +46,6 @@ gulp.task('lint', function () {
         }));
 });
 ```
-
 Options
 -------
 
@@ -57,7 +56,12 @@ Options
 }
 ```
 
-Inspired on:
+Release History
+---------------
+- 2015-02-04    `0.3.2` Added line break after first jslint tag on jslint emitter
+
+
+Inspired by:
 ------------
 
 * [Gulp JSHint File Reporter](https://github.com/spenceralger/gulp-jshint-file-reporter)
