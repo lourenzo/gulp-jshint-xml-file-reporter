@@ -6,18 +6,20 @@ Information
 -----------
 
 <table>
-<tr>
-<td>Package</td><td>gulp-jshint-xml-file-reporter</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>A JSHint reporter to be used by gulp-jshint that will provide a jslint.xml
-file that can be used by CI tools as jenkins.</td>
-</tr>
-<tr>
-<td>Node Version</td>
-<td>>= 0.4</td>
-</tr>
+    <tr>
+        <td>Package</td>
+        <td>gulp-jshint-xml-file-reporter</td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>
+            A JSHint reporter to be used by `gulp-jshint` that will provide a jslint.xml file that can be used by CI tools as jenkins.
+        </td>
+    </tr>
+    <tr>
+        <td>Node Version</td>
+        <td>>= 0.4</td>
+    </tr>
 </table>
 
 Install
@@ -31,20 +33,19 @@ Usage
 
 ```javascript
 var gulp = require('gulp'),
-    jshint = require('gulp-jshint-xml-file-reporter'),
-    jshintXMLFile =  require('gulp');
+    jshint = require('gulp-jshint'),
+    jshintXMLReporter = require('gulp-jshint-xml-file-reporter');
 
 gulp.task('lint', function () {
     return gulp.src('./**/.js')
         .pipe(jshint())
-        .pipe(jshint.reporter(jshintXMLFile))
-        .on('end', jshintXMLFile.writeFile({
+        .pipe(jshint.reporter(jshintXMLReporter))
+        .on('end', jshintXMLReporter.writeFile({
             format: 'checkstyle'
             filePath: './jshint.xml'
         }));
 });
 ```
-
 
 Options
 -------
@@ -52,13 +53,9 @@ Options
 ```javascript
 {
     format: String // (checkstyle | jshint_xml) defaults to checkstyle
-    filePath: String // Path to write a file - defaults to jshint.xml    
+    filePath: String // Path to write a file - defaults to jshint.xml
 }
-
-
 ```
-
-
 
 Inspired on:
 ------------
