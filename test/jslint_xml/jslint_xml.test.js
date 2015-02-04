@@ -4,7 +4,7 @@ var should = require('should'),
     fs = require('fs'),
     xmlEmitter = require('../../lib/jslint_xml_emitter');
 
-describe.only('jslint_xml', function () {
+describe('jslint_xml', function () {
     var mockXMLResults;
     var xmlText;
 
@@ -17,7 +17,7 @@ describe.only('jslint_xml', function () {
     });
 
     beforeEach(function () {
-        var errors = require('../fixtures/errors');
+        var errors = require('./fixtures/errors');
 
         xmlText = xmlEmitter.getHeader();
         xmlText = xmlText.concat(xmlEmitter.formatContent(errors));

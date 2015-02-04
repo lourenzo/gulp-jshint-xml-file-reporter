@@ -17,7 +17,7 @@ describe('checkstyle', function () {
     });
 
     beforeEach(function () {
-        var errors = require('../fixtures/errors');
+        var errors = require('./fixtures/errors');
 
         xmlText = xmlEmitter.getHeader();
         xmlText = xmlText.concat(xmlEmitter.formatContent(errors));
