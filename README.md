@@ -58,6 +58,7 @@ Options
 
 Release History
 ---------------
+- 2015-02-06    `0.4.1` Bugfix for JUnit reporter for integration with Atlassian Bamboo
 - 2015-02-04    `0.4.0` Added JUnit Emitter
 - 2015-02-04    `0.3.2` Added line break after first jslint tag on jslint emitter
 
