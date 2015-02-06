@@ -33,10 +33,6 @@ exports.writeFile = function (opts) {
     opts.format = opts.format || 'checkstyle';
     exports.xmlEmitter = loadFormatter(opts.format);
     return function () {
-        if (!exports.out.length) {
-            reset();
-            return;
-        }
         var outStream = fs.createWriteStream(opts.filePath);
         outStream.write(exports.xmlEmitter.getHeader());
         exports.out.forEach(function (item) {
