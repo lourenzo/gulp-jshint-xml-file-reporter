@@ -16,6 +16,15 @@ describe('junit', function () {
         });
     }
 
+    function getResults(path) {
+        var errors = require(path);
+        var xml = xmlEmitter.getHeader(errors);
+        xml = xml.concat(xmlEmitter.formatContent(errors));
+        xml = xml.concat(xmlEmitter.getFooter());
+
+        return xml;
+    }
+
     describe('Given there are no failing tests', function () {
         before(function (done) {
             var path = './test/junit/fixtures/mock_empty.xml';
@@ -23,11 +32,8 @@ describe('junit', function () {
         });
 
         beforeEach(function () {
-            var errors = require('./fixtures/no_errors');
-
-            xmlText = xmlEmitter.getHeader(errors);
-            xmlText = xmlText.concat(xmlEmitter.formatContent(errors));
-            xmlText = xmlText.concat(xmlEmitter.getFooter());
+            var path = './fixtures/no_errors';
+            xmlText = getResults(path);
         });
 
         it('should generate a skeleton JSHint results in junit XML', function () {
@@ -42,11 +48,8 @@ describe('junit', function () {
         });
 
         beforeEach(function () {
-            var errors = require('./fixtures/errors');
-
-            xmlText = xmlEmitter.getHeader(errors);
-            xmlText = xmlText.concat(xmlEmitter.formatContent(errors));
-            xmlText = xmlText.concat(xmlEmitter.getFooter());
+            var path = './fixtures/errors';
+            xmlText = getResults(path);
         });
 
         it('should transform JSHint results in junit XML', function () {
