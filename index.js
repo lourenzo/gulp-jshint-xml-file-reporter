@@ -20,8 +20,6 @@ function loadFormatter(formatterPath) {
 /**
  * Write out a XML file for the encountered results
  * @param  {Array}  results
- * @param  {Array}  data
- * @param  {Object} opts
  */
 exports.reporter = function (results) {
     exports.out.push(results);
