@@ -1,0 +1,111 @@
+[
+    {
+        "file": "dummy.js",
+        "error": {
+            "id": "(error)",
+            "raw": "Strings must use singlequote.",
+            "code": "W109",
+            "evidence": "\"use strict\"",
+            "line": 1,
+            "character": 13,
+            "scope": "(main)",
+            "reason": "Strings must use singlequote."
+        }
+    },
+    {
+        "file": "dummy.js",
+        "error": {
+            "id": "(error)",
+            "raw": "Missing semicolon.",
+            "code": "W033",
+            "evidence": "\"use strict\"",
+            "line": 1,
+            "character": 1,
+            "scope": "(main)",
+            "reason": "Missing semicolon."
+        }
+    },
+    {
+        "file": "dummy.js",
+        "error": {
+            "id": "(error)",
+            "raw": "Missing name in function declaration.",
+            "code": "W025",
+            "evidence": "function(a) {",
+            "line": 3,
+            "character": 9,
+            "scope": "(main)",
+            "reason": "Missing name in function declaration."
+        }
+    },
+    {
+        "file": "dummy.js",
+        "error": {
+            "id": "(error)",
+            "raw": "'{a}' is not defined.",
+            "code": "W117",
+            "evidence": "c=1;",
+            "line": 9,
+            "character": 1,
+            "scope": "(main)",
+            "a": "c",
+            "reason": "'c' is not defined."
+        }
+    },
+    {
+        "file": "dummy.js",
+        "error": {
+            "id": "(error)",
+            "raw": "'{a}' is defined but never used.",
+            "code": "W098",
+            "evidence": "function(a) {",
+            "line": 3,
+            "character": 1,
+            "scope": "(main)",
+            "a": "undefined",
+            "reason": "'undefined' is defined but never used."
+        }
+    },
+    {
+        "file": "dummy.js",
+        "error": {
+            "id": "(error)",
+            "raw": "'{a}' is defined but never used.",
+            "code": "W098",
+            "evidence": "var a, b;",
+            "line": 7,
+            "character": 5,
+            "scope": "(main)",
+            "a": "a",
+            "reason": "'a' is defined but never used."
+        }
+    },
+    {
+        "file": "dummy.js",
+        "error": {
+            "id": "(error)",
+            "raw": "'{a}' is defined but never used.",
+            "code": "W098",
+            "evidence": "var a, b;",
+            "line": 7,
+            "character": 8,
+            "scope": "(main)",
+            "a": "b",
+            "reason": "'b' is defined but never used."
+        }
+    },
+    {
+        "file": "dummy.js",
+        "error": {
+            "id": "(error)",
+            "raw": "'{a}' is defined but never used.",
+            "code": "W098",
+            "evidence": "function(a) {",
+            "line": 3,
+            "character": 10,
+            "scope": "(main)",
+            "a": "a",
+            "reason": "'a' is defined but never used."
+        }
+    }
+]
