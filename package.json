@@ -1,6 +1,6 @@
 {
   "name": "gulp-jshint-xml-file-reporter",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "description": "A JSHint reporter to be used with gulp-jshint that will provide XML (i.e. checkstyle), that can be used by CI tools such as jenkins",
   "main": "index.js",
   "scripts": {
