@@ -52,7 +52,7 @@ Options
 
 ```javascript
 {
-    format: String // (checkstyle | jslint_xml | junit) defaults to checkstyle
+    format: String // (checkstyle | jslint | junit) defaults to checkstyle
     filePath: String // Path to write a file - defaults to jshint.xml
 }
 ```
