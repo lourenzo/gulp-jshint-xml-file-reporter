@@ -22,9 +22,6 @@
   // Define globals exposed by Node.js.
   "node": true,
 
-  // Define globals exposed by mocha
-  "mocha": true,
-
   /*
    * ENFORCING OPTIONS
    * =================

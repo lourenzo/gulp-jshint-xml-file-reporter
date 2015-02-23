@@ -1,0 +1,6 @@
+{
+  "extends": "../.jshintrc-base",
+  "node": true,
+  // Define globals exposed by mocha
+  "mocha": true
+}
