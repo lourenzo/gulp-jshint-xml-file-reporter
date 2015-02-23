@@ -1,15 +1,15 @@
 'use strict';
 
-var should = require('should'),
-    fs = require('fs'),
-    xmlEmitter = require('../../lib/jslint_xml_emitter');
+var fs = require('fs'),
+    xmlEmitter = require('../../lib/jslint_emitter');
+require('should');
 
-describe('jslint_xml', function () {
+describe('jslint', function () {
     var mockXMLResults;
     var xmlText;
 
     before(function (done) {
-        fs.readFile('./test/jslint_xml/fixtures/mock.xml', function (err, data) {
+        fs.readFile('./test/jslint/fixtures/mock.xml', function (err, data) {
             if (err) return done(err);
             mockXMLResults = data.toString('utf8');
             done();
