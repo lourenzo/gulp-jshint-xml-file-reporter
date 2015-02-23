@@ -14,7 +14,15 @@ function reset() {
  * @return
  */
 function loadFormatter(formatterPath) {
-    return require('./lib/' + formatterPath + '_emitter');
+    try {
+        // @TODO: deprecate
+        formatterPath = (formatterPath === 'jslint_xml')? 'jslint': formatterPath;
+        return require('./lib/' + formatterPath + '_emitter');
+    } catch (e) {
+        console.error('Unrecognized format: %s', formatterPath);
+        console.error('This emitter was not found on lib folder.\nYou can always create yours :)\n');
+        throw e;
+    }
 }
 
 /**
