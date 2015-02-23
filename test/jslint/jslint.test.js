@@ -1,8 +1,8 @@
 'use strict';
 
-var should = require('should'),
-    fs = require('fs'),
+var fs = require('fs'),
     xmlEmitter = require('../../lib/jslint_emitter');
+require('should');
 
 describe('jslint', function () {
     var mockXMLResults;

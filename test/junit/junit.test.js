@@ -1,8 +1,8 @@
 'use strict';
 
-var should = require('should'),
-    fs = require('fs'),
+var fs = require('fs'),
     xmlEmitter = require('../../lib/junit_emitter');
+require('should');
 
 describe('junit', function () {
     var mockXMLResults;
