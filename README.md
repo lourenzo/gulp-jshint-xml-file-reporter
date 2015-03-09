@@ -52,8 +52,9 @@ Options
 
 ```javascript
 {
-    format: String // (checkstyle | jslint | junit) defaults to checkstyle
+    format: String // (checkstyle | jslint | junit) - defaults to checkstyle
     filePath: String // Path to write a file - defaults to jshint.xml
+    alwaysReport: Boolean // Will write a report file even if there are no failing tests - defaults to false
 }
 ```
 
