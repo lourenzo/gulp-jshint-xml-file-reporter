@@ -37,9 +37,10 @@ exports.writeFile = function (opts) {
     opts = opts || {};
     opts.filePath = opts.filePath || 'jshint.xml';
     opts.format = opts.format || 'checkstyle';
+    opts.alwaysReport = opts.alwaysReport || false;
     exports.xmlEmitter = loadFormatter(opts.format);
     return function () {
-        if (!exports.out.length) {
+        if (!opts.alwaysReport && !exports.out.length) {
             reset();
             return;
         }
