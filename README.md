@@ -54,12 +54,14 @@ Options
 {
     format: String // (checkstyle | jslint | junit) - defaults to checkstyle
     filePath: String // Path to write a file - defaults to jshint.xml
-    alwaysReport: Boolean // Will write a report file even if there are no failing tests - defaults to false
+    alwaysReport: Boolean // Will write a report file even if there are
+                          // no failing tests - defaults to false
 }
 ```
 
 Release History
 ---------------
+- 2015-03-13    `0.5.0` - Added option to generate empty files
 - 2015-02-23    `0.4.0` - Renamed jslint_xml formater to jslint
 - 2015-02-23    `0.3.4` - Added error messaging to warn the user when an emitter does not exist
 - 2015-02-11    `0.3.3` - Added JUnit Emitter
