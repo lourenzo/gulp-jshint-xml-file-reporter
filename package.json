@@ -1,7 +1,16 @@
 {
   "name": "gulp-jshint-xml-file-reporter",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A JSHint reporter to be used with gulp-jshint that will provide XML (i.e. checkstyle and junit), that can be used by CI tools such as jenkins",
+  "author": {
+    "name": "Lourenzo Ferreira",
+    "email": "lourenzo@gmail.com",
+    "url": "http://lourenzo.blog.br"
+  },
+  "contributors": [
+    { "name": "Aaron Faber", "email": "aaron.jack.faber@gmail.com", "url": "https://github.com/shnist" },
+    { "name": "Ian Huntington", "url": "https://github.com/ihuntington" }
+  ],
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha test/**/*.test.js"
@@ -21,7 +30,6 @@
     "ci",
     "jenkins"
   ],
-  "author": "Lourenzo Ferreira <lourenzo@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lourenzo/gulp-jshint-xml-file-reporter/issues"
