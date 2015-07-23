@@ -37,7 +37,7 @@ function createDirectory(filePath, cb) {
     var dirname = path.dirname(filePath);
 
     mkdirp(dirname, function (err) {
-        if (typeof err === 'undefined') {
+        if (!err) {
             cb();
         } else {
             console.error(err);
