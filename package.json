@@ -8,8 +8,15 @@
     "url": "http://lourenzo.blog.br"
   },
   "contributors": [
-    { "name": "Aaron Faber", "email": "aaron.jack.faber@gmail.com", "url": "https://github.com/shnist" },
-    { "name": "Ian Huntington", "url": "https://github.com/ihuntington" }
+    {
+      "name": "Aaron Faber",
+      "email": "aaron.jack.faber@gmail.com",
+      "url": "https://github.com/shnist"
+    },
+    {
+      "name": "Ian Huntington",
+      "url": "https://github.com/ihuntington"
+    }
   ],
   "main": "index.js",
   "scripts": {
@@ -43,5 +50,8 @@
     "gulp-jshint": "1.9.0",
     "mocha": "2.1.0",
     "should": "4.6.3"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.1"
   }
 }

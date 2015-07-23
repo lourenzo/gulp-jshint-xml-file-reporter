@@ -1,12 +1,15 @@
 'use strict';
 
 var fs = require('fs');
+var path = require('path');
+var mkdirp = require('mkdirp');
 
 function reset() {
     exports.out = [];
     exports.xmlEmitter = null;
     exports.opts = {};
-} reset();
+}
+reset();
 
 /**
  * Load a formatter
@@ -16,13 +19,30 @@ function reset() {
 function loadFormatter(formatterPath) {
     try {
         // @TODO: deprecate
-        formatterPath = (formatterPath === 'jslint_xml')? 'jslint': formatterPath;
+        formatterPath = (formatterPath === 'jslint_xml') ? 'jslint' : formatterPath;
         return require('./lib/' + formatterPath + '_emitter');
     } catch (e) {
         console.error('Unrecognized format: %s', formatterPath);
         console.error('This emitter was not found on lib folder.\nYou can always create yours :)\n');
         throw e;
     }
+}
+
+/**
+ * Creates the output dir
+ * @param {String} filePath
+ * @param cb
+ */
+function createDirectory(filePath, cb) {
+    var dirname = path.dirname(filePath);
+
+    mkdirp(dirname, function (err) {
+        if (typeof err === 'undefined') {
+            cb();
+        } else {
+            console.error(err);
+        }
+    });
 }
 
 /**
@@ -44,12 +64,14 @@ exports.writeFile = function (opts) {
             reset();
             return;
         }
-        var outStream = fs.createWriteStream(opts.filePath);
-        outStream.write(exports.xmlEmitter.getHeader());
-        exports.out.forEach(function (item) {
-            outStream.write(exports.xmlEmitter.formatContent(item));
+        createDirectory(opts.filePath, function () {
+            var outStream = fs.createWriteStream(opts.filePath);
+            outStream.write(exports.xmlEmitter.getHeader());
+            exports.out.forEach(function (item) {
+                outStream.write(exports.xmlEmitter.formatContent(item));
+            });
+            outStream.write(exports.xmlEmitter.getFooter());
+            reset();
         });
-        outStream.write(exports.xmlEmitter.getFooter());
-        reset();
     };
 };
