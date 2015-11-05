@@ -45,7 +45,7 @@ exports.writeFile = function (opts) {
             return;
         }
         var outStream = fs.createWriteStream(opts.filePath);
-        outStream.write(exports.xmlEmitter.getHeader());
+        outStream.write(exports.xmlEmitter.getHeader(exports.out));
         exports.out.forEach(function (item) {
             outStream.write(exports.xmlEmitter.formatContent(item));
         });
