@@ -16,6 +16,10 @@
     {
       "name": "Ian Huntington",
       "url": "https://github.com/ihuntington"
+    },
+    {
+      "name": "Cleydson Júnior",
+      "url": "https://github.com/cleydsonjr"
     }
   ],
   "main": "index.js",
@@ -52,6 +56,6 @@
     "should": "4.6.3"
   },
   "dependencies": {
-    "mkdirp": "^0.5.1"
+    "mkdirp": "0.5.1"
   }
 }

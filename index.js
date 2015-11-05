@@ -40,7 +40,7 @@ function createDirectory(filePath, cb) {
         if (!err) {
             cb();
         } else {
-            console.error(err);
+            console.error('Error creating directory: ', err);
         }
     });
 }

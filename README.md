@@ -61,6 +61,7 @@ Options
 
 Release History
 ---------------
+- 2015-11-05    `0.5.2` - The reporter will create the output filePath parent folder, if it does not exists yet;
 - 2015-03-13    `0.5.0` - Added option to generate empty files
 - 2015-02-23    `0.4.0` - Renamed jslint_xml formater to jslint
 - 2015-02-23    `0.3.4` - Added error messaging to warn the user when an emitter does not exist

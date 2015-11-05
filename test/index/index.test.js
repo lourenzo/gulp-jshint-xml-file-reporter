@@ -21,6 +21,6 @@ describe("Given that there isn't the specified output report path", function () 
     after(function (done) {
         fs.unlinkSync('test_out/jshint.xml');
         fs.rmdirSync('test_out');
-        done()
+        done();
     });
 });
