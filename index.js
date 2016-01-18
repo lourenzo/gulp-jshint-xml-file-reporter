@@ -58,7 +58,7 @@ exports.writeFile = function (opts) {
     opts.filePath = opts.filePath || 'jshint.xml';
     opts.format = opts.format || 'checkstyle';
     opts.alwaysReport = opts.alwaysReport || false;
-    opts.relativePaths = opts.relativePaths || true;
+    opts.globalPaths = opts.globalPaths || false;
     exports.xmlEmitter = loadFormatter(opts.format);
     return function () {
         if (!opts.alwaysReport && !exports.out.length) {
@@ -69,7 +69,7 @@ exports.writeFile = function (opts) {
             var outStream = fs.createWriteStream(opts.filePath);
             outStream.write(exports.xmlEmitter.getHeader(exports.out));
             exports.out.forEach(function (item) {
-                outStream.write(exports.xmlEmitter.formatContent(item, opts.relativePaths));
+                outStream.write(exports.xmlEmitter.formatContent(item, opts.globalPaths));
             });
             outStream.write(exports.xmlEmitter.getFooter());
             reset();
