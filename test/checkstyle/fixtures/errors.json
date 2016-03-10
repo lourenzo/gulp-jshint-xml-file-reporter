@@ -107,5 +107,33 @@
             "a": "a",
             "reason": "'a' is defined but never used."
         }
+    },
+    {
+        "file": "dummy.js",
+        "error": {
+            "id": "(error)",
+            "raw": "const '{a}' has already been declared.",
+            "code": "E011",
+            "evidence": "const a = 1; const a = 2;",
+            "line": 10,
+            "character": 1,
+            "scope": "(main)",
+            "a": "a",
+            "reason": "const 'a' has already been declared."
+        }
+    },
+    {
+        "file": "dummy.js",
+        "error": {
+            "id": "(error)",
+            "raw": "ES5 option is now set per default",
+            "code": "I003",
+            "evidence": "/*jshint es5: true */",
+            "line": 11,
+            "character": 1,
+            "scope": "(main)",
+            "a": "a",
+            "reason": "ES5 option is now set per default"
+        }
     }
 ]
